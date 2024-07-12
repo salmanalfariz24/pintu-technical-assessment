@@ -1,0 +1,16 @@
+# built folders and files
+**/build/*
+**/dist/*
+
+# project folder
+public/*
+
+# dependencies folder
+**/node_modules/*
+
+# testing
+coverage/*
+
+# next
+.next/*
+.out/*

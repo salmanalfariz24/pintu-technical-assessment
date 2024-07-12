@@ -1,0 +1,92 @@
+{
+  "name": "pintu-technical-assessment",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "eslint-lint:fix": "eslint . --ext .js,.jsx,.tsx,.ts --fix",
+    "eslint-lint": "lint-staged",
+    "eslint-rule-check": "eslint --print-config . | eslint-config-prettier-check",
+    "prettier-format": "prettier --config .prettierrc.js 'src/**/*.{js,jsx,tsx,ts}' --write"
+  },
+  "dependencies": {
+    "@radix-ui/react-progress": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
+    "@tanstack/react-table": "^8.19.3",
+    "apexcharts": "^3.50.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "immer": "^10.1.1",
+    "lucide-react": "^0.408.0",
+    "mitt": "^3.0.1",
+    "next": "14.2.5",
+    "query-string": "8.2.0",
+    "react": "^18",
+    "react-apexcharts": "^1.4.1",
+    "react-dom": "^18",
+    "react-use-websocket": "^3.0.0",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "use-immer": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "4.0.0",
+    "eslint-import-resolver-babel-module": "5.3.1",
+    "eslint-import-resolver-typescript": "2.5.0",
+    "eslint-import-resolver-webpack": "0.11.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "26.1.0",
+    "eslint-plugin-jest-dom": "4.0.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-no-secrets": "0.8.9",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-testing-library": "5.0.5",
+    "eslint-scope": "7.1.1",
+    "postcss": "^8",
+    "prettier": "^2.3.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "husky": {
+    "hooks": {
+      "post-merge": "sh ./scripts/git-hooks/post-merge.sh",
+      "pre-commit": "sh ./scripts/git-hooks/pre-commit.sh"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,jsx}": [
+        "prettier --config .prettierrc.js --write",
+        "eslint --ignore-pattern '!.*.js' --ignore-pattern '!.*.jsx'",
+        "git add"
+      ],
+      "*.{ts,tsx}": [
+        "prettier --config .prettierrc.js --write",
+        "eslint --ignore-pattern '!.*.ts' --ignore-pattern '!.*.tsx'",
+        "git add"
+      ],
+      "*.{md,yml}": [
+        "prettier --config .prettierrc.js --write",
+        "git add"
+      ],
+      "*.{json}": [
+        "prettier --config .prettierrc.js --write",
+        "eslint --ignore-pattern '!package.json'",
+        "git add"
+      ]
+    }
+  }
+}
