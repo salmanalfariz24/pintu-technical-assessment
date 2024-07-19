@@ -6,7 +6,7 @@ export function getChartData(response: ResponseAPI_AssetHistories): ChartDataTyp
   }
   const { data } = response;
   return data.map(value => {
-    const parsef = parseFloat(value.priceUsd ?? '0').toFixed(2)
+    const parsef = parseFloat(value.priceUsd ?? '0').toFixed(2);
     const price = parseFloat(parsef);
     return {
       x: value.time,
