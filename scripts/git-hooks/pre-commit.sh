@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-yarn eslint-lint
+npm run lint
 
 eslint_exit=$?
 
